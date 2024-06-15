@@ -1,0 +1,9 @@
+n=int(input())
+x= {}
+for _ in range(n):
+    vote = input().strip()
+    x[vote] = x.get(vote, 0) + 1
+max= max(x.values())
+w= [candy for candy, votes in x.items() if votes == max]
+y= min(w)
+print(y)
