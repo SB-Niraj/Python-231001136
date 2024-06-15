@@ -1,0 +1,17 @@
+import sys
+from collections import OrderedDict
+
+d = sys.stdin.read().strip().split('\n')
+b = OrderedDict()
+
+for ln in d:
+    if ln.strip() == "":
+        continue
+    t, g = map(str.strip, ln.split(",", 1))
+    
+    if g not in b:
+        b[g] = []
+    b[g].append(t)
+
+for g in b:
+    print(f"{g}: {', '.join(b[g])}")
