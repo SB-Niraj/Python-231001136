@@ -1,0 +1,18 @@
+import sys
+d = sys.stdin.read().split()
+X = int(d[0])
+inv = {}
+
+for s in map(int, d[1:X+1]):
+    inv[s] = inv.get(s, 0) + 1
+
+N, rev = int(d[X+1]), 0
+req = d[X+2:]
+
+for i in range(N):
+    sz, pr = int(req[2 * i]), int(req[2 * i + 1])
+    if inv.get(sz, 0) > 0:
+        rev += pr
+        inv[sz] -= 1
+
+print(rev)
