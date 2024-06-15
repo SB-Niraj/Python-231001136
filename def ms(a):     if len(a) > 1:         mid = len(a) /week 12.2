@@ -1,0 +1,17 @@
+import sys
+d = sys.stdin.read().split('\n')
+
+N = int(d[0])
+c = d[1].split()
+m = c.index("MARKS")
+
+t, v = 0, 0
+
+for i in range(2, 2 + N):
+    s = d[i].split()
+    if len(s) > m and s[m].isdigit():
+        t += int(s[m])
+        v += 1
+
+a = t / v if v > 0 else 0
+print(f"{a:.2f}")
