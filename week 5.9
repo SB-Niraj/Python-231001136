@@ -1,0 +1,9 @@
+string = input()
+
+letters = sum(1 for char in string if char.isalpha())
+digits = sum(1 for char in string if char.isdigit())
+special_symbols = len(string) - letters - digits
+
+print(letters)
+print(digits)
+print(special_symbols)
