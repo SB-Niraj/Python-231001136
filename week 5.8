@@ -1,0 +1,11 @@
+s1 = input()
+s2 = input()
+
+s2_chars = set(s2)
+result = ""
+
+for char in s1:
+    if char not in s2_chars:
+        result += char
+
+print(result)
