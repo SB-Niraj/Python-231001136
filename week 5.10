@@ -1,0 +1,8 @@
+keywords = {'break', 'case', 'continue', 'default', 'defer', 'else', 'for',
+            'func', 'goto', 'if', 'map', 'range', 'return', 'struct', 'type', 'var'}
+
+word = input()
+if word in keywords:
+    print(f"{word} is a keyword")
+else:
+    print(f"{word} is not a keyword")
