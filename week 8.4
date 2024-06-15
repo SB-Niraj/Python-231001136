@@ -1,0 +1,30 @@
+n = int(input())
+std = {}
+
+for _ in range(n):
+    data = input().split()
+    name = data[0]
+    t, a, l = map(int, data[1:])
+    std[name] = (t, a, l)
+
+avg = {name: sum(m) / len(m) for name, m in std.items()}
+
+a = max(avg.values())
+a_s = sorted([n for n, s in avg.items() if s == a])
+
+ase = max([m[1] for m in std.values()])
+as_s = sorted([n for n, m in std.items() if m[1] == ase])
+
+l = min([m[2] for m in std.values()])
+l_s = sorted([n for n, m in std.items() if m[2] == l])
+
+la = min(avg.values())
+la_s = sorted([n for n, s in avg.items() if s == la])
+
+print("\n".join([
+    " ".join(a_s),
+    " ".join(as_s),
+    " ".join(l_s),
+    " ".join(la_s)
+]))
+
